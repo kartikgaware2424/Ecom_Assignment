@@ -13,8 +13,14 @@ public class CustomerService {
 		
 		int id=(int) (Math.random()*100000);
 		customer.setId(id);
-		dao.insertCustomer(customer);
-		System.out.println("The data is inserted SuccessFully!!");
+		try
+		{
+			dao.insertCustomer(customer);
+			System.out.println("The data is inserted SuccessFully!!");
+		}catch(Exception e)
+		{
+			System.out.println(e.getMessage());
+		}
 	}
 
 }
